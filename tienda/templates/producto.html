@@ -1,0 +1,10 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>{{ producto.nombre }}</h1>
+<h5>Precio: {{ producto.precio }}</h5>
+<img src="http://placehold.it/700x400" alt="{{ producto.nombre }}" class="img-fluid">
+<p>{{ producto.descripcion }}</p>
+<a href="{% url 'tienda:productos_por_categoria' producto.categoria.id %}">Volver a {{ producto.categoria.nombre }}</a>
+{% endblock %}
